@@ -15,13 +15,13 @@ public class RedesController {
 	
 	private String os() {
 		String os = System.getProperty("os.name");
-		System.out.println(os);
+	//	System.out.println(os);
 		return os; 
 	}
 	
 	public void IP() {
 		if(os().contains("Windows")) {
-			String [] process = {"IPCONFIG"}; 
+			String process = "IPCONFIG"; 
 			try {
 				Process p = Runtime.getRuntime().exec(process);
 				InputStream fluxo = p.getInputStream(); 
@@ -45,7 +45,7 @@ public class RedesController {
 				e.printStackTrace();
 			}  	   
 		}else if(os().contains("Linux")) {
-			String [] process = {"ifconfig"}; 
+			String process = "ifconfig"; 
 			try {
 				Process p = Runtime.getRuntime().exec(process);
 				InputStream fluxo = p.getInputStream(); 
